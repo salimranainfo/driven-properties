@@ -1,34 +1,29 @@
 <script>
-	import { onMount } from 'svelte';
+	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 
-	onMount(() => {
-		window.jQuery(document).ready(function (e) {
-			jQuery('.slider')
-				.not('.slick-initialized')
-				.slick({
-					infinite: true,
-					autoplay: true,
-					autoplaySpeed: 2000,
-					slidesToShow: 3,
-					slidesToScroll: -1,
-					dots: false,
-					arrows: true,
-					responsive: [
-						{
-							breakpoint: 767,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: -1
-							}
-						}
-
-						// You can unslick at a given breakpoint now by adding:
-						// settings: "unslick"
-						// instead of a settings object
-					]
-				});
-		});
-	});
+	const options = {
+		type: 'slide',
+		pagination: false,
+		arrows: false,
+		perPage: 3,
+		drag: false,
+		gap: '2rem',
+		breakpoints: {
+			767: {
+				perPage: 1,
+				drag: true,
+				gap: '0rem'
+			},
+			1024: {
+				perPage: 2,
+				drag: true,
+				gap: '0rem'
+			},
+			1400: {
+				gap: '1rem'
+			}
+		}
+	};
 </script>
 
 <div class="service">
@@ -45,30 +40,40 @@
 			<div class="property">
 				<div class="property-in">
 					<ul class="clearfix slider">
-						<li>
-							<div class="manage">
-								<div class="manage-in">
-									<img src="images/img1.png" width="523" height="321" alt="img1" />
-									<h6>Property Management</h6>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="manage">
-								<div class="manage-in">
-									<img src="images/img2.png" width="523" height="321" alt="img2" />
-									<h6>Property Investment</h6>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="manage">
-								<div class="manage-in">
-									<img src="images/img3.png" width="523" height="321" alt="img3" />
-									<h6>Mortgage Advisor</h6>
-								</div>
-							</div>
-						</li>
+						<Splide {options}>
+							<SplideSlide>
+								<li style="width: 100%">
+									<div class="manage">
+										<div class="manage-in">
+											<img src="images/img1.png" width="523" height="321" alt="img1" />
+											<h6>Property Management</h6>
+										</div>
+									</div>
+								</li>
+							</SplideSlide>
+
+							<SplideSlide>
+								<li style="width: 100%">
+									<div class="manage">
+										<div class="manage-in">
+											<img src="images/img2.png" width="523" height="321" alt="img2" />
+											<h6>Property Investment</h6>
+										</div>
+									</div>
+								</li>
+							</SplideSlide>
+
+							<SplideSlide>
+								<li style="width: 100%">
+									<div class="manage">
+										<div class="manage-in">
+											<img src="images/img3.png" width="523" height="321" alt="img3" />
+											<h6>Mortgage Advisor</h6>
+										</div>
+									</div>
+								</li>
+							</SplideSlide>
+						</Splide>
 					</ul>
 				</div>
 			</div>

@@ -1,34 +1,36 @@
 <script>
-	import { onMount } from 'svelte';
+	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 
-	onMount(() => {
-		window.jQuery(document).ready(function (e) {
-			jQuery('.slider1')
-				.not('.slick-initialized')
-				.slick({
-					infinite: true,
-					autoplay: true,
-					autoplaySpeed: 2000,
-					slidesToShow: 4,
-					slidesToScroll: -1,
-					dots: false,
-					arrows: true,
-					responsive: [
-						{
-							breakpoint: 767,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: -1
-							}
-						}
-
-						// You can unslick at a given breakpoint now by adding:
-						// settings: "unslick"
-						// instead of a settings object
-					]
-				});
-		});
-	});
+	const options = {
+		type: 'slide',
+		pagination: false,
+		arrows: false,
+		perPage: 4,
+		drag: false,
+		gap: '1rem',
+		breakpoints: {
+			767: {
+				perPage: 1,
+				drag: true,
+				gap: '0rem',
+				padding: {
+					right: '3rem'
+				}
+			},
+			1024: {
+				perPage: 2,
+				drag: true,
+				gap: '0rem',
+				padding: {
+					right: '0rem',
+					left: '0rem'
+				}
+			},
+			1400: {
+				gap: '0rem'
+			}
+		}
+	};
 </script>
 
 <div class="fact">
@@ -42,60 +44,76 @@
 				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 				cupidatat non proident, sunt in culpa qui officia deserunt mollit.
 			</p>
+
 			<div class="award">
 				<div class="award-in">
 					<ul class="clearfix slider1">
-						<li>
-							<div class="sale">
-								<div class="sale-in">
-									<a href="#!"><img src="images/award.png" width="49" height="100" alt="award" /></a
-									>
-									<span>50+</span>
-									<p>AWARDS</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="sale">
-								<div class="sale-in">
-									<a href="#!"
-										><img src="images/star-G.png" width="152" height="102" alt="star-G" /></a
-									>
-									<span>800+</span>
-									<p>GOOGLE REVIEWS</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="sale">
-								<div class="sale-in">
-									<a href="#!"
-										><img src="images/f-img3.png" width="111" height="92" alt="f-img3" /></a
-									>
-									<span>AED 20Billion</span>
-									<p>SALES VALUE</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="sale">
-								<div class="sale-in">
-									<a href="#!"
-										><img
-											src="images/house%20(1).png"
-											width="106"
-											height="93"
-											alt="house%20(1)"
-										/></a
-									>
-									<span>AED 1 Billion</span>
-									<p>LEASING INCOME</p>
-								</div>
-							</div>
-						</li>
+						<Splide {options}>
+							<SplideSlide>
+								<li style="width: 100%">
+									<div class="sale">
+										<div class="sale-in">
+											<a href="#!"
+												><img src="images/award.png" width="49" height="100" alt="award" /></a
+											>
+											<span>50+</span>
+											<p>AWARDS</p>
+										</div>
+									</div>
+								</li>
+							</SplideSlide>
+
+							<SplideSlide>
+								<li style="width: 100%">
+									<div class="sale">
+										<div class="sale-in">
+											<a href="#!"
+												><img src="images/star-G.png" width="152" height="102" alt="star-G" /></a
+											>
+											<span>800+</span>
+											<p>GOOGLE REVIEWS</p>
+										</div>
+									</div>
+								</li>
+							</SplideSlide>
+
+							<SplideSlide>
+								<li style="width: 100%">
+									<div class="sale">
+										<div class="sale-in">
+											<a href="#!"
+												><img src="images/f-img3.png" width="111" height="92" alt="f-img3" /></a
+											>
+											<span>AED 20Billion</span>
+											<p>SALES VALUE</p>
+										</div>
+									</div>
+								</li>
+							</SplideSlide>
+
+							<SplideSlide>
+								<li style="width: 100%">
+									<div class="sale">
+										<div class="sale-in">
+											<a href="#!"
+												><img
+													src="images/house%20(1).png"
+													width="106"
+													height="93"
+													alt="house%20(1)"
+												/></a
+											>
+											<span>AED 1 Billion</span>
+											<p>LEASING INCOME</p>
+										</div>
+									</div>
+								</li>
+							</SplideSlide>
+						</Splide>
 					</ul>
 				</div>
 			</div>
+
 			<div class="real">
 				<div class="real-in">
 					<h3>DUBAI REAL ESTATE INVESTMENT OPPORTUNITIES WITH DRIVEN PROPERTIES</h3>

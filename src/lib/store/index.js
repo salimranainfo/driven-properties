@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const direction = writable('ltr');
+export const direction = writable('rtl');

@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="description" content="" />
+		{#
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+		#}
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -14,8 +16,6 @@
 			href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
-		<link rel="stylesheet" type="text/css" href="css/slick.css" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%svelte.head%
@@ -27,7 +27,7 @@
 			<div id="svelte">%svelte.body%</div>
 		</div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="js/slick.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	</body>
 </html>
