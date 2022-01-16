@@ -1,18 +1,18 @@
 <script>
 	import { onMount } from 'svelte';
 
-	onMount(() => {
-		window.jQuery(document).ready(function () {
-			jQuery('.slider-banner').not('.slick-initialized').slick({
-				dots: true,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				autoplay: false,
-				autoplaySpeed: 4000,
-				arrows: true
-			});
-		});
-	});
+	// onMount(() => {
+	// 	window.jQuery(document).ready(function () {
+	// 		jQuery('.slider-banner').not('.slick-initialized').slick({
+	// 			dots: true,
+	// 			slidesToShow: 1,
+	// 			slidesToScroll: -1,
+	// 			autoplay: false,
+	// 			autoplaySpeed: 4000,
+	// 			arrows: true
+	// 		});
+	// 	});
+	// });
 </script>
 
 <div class="banner-slide">

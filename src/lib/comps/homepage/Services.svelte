@@ -10,7 +10,7 @@
 					autoplay: true,
 					autoplaySpeed: 2000,
 					slidesToShow: 3,
-					slidesToScroll: 1,
+					slidesToScroll: -1,
 					dots: false,
 					arrows: true,
 					responsive: [
@@ -18,7 +18,7 @@
 							breakpoint: 767,
 							settings: {
 								slidesToShow: 1,
-								slidesToScroll: 1
+								slidesToScroll: -1
 							}
 						}
 
@@ -27,29 +27,6 @@
 						// instead of a settings object
 					]
 				});
-
-			jQuery('.slider').slick({
-				infinite: true,
-				autoplay: true,
-				autoplaySpeed: 2000,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				dots: false,
-				arrows: true,
-				responsive: [
-					{
-						breakpoint: 576,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1
-						}
-					}
-
-					// You can unslick at a given breakpoint now by adding:
-					// settings: "unslick"
-					// instead of a settings object
-				]
-			});
 		});
 	});
 </script>
