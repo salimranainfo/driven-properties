@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url('/path-to/ProximaNova-Bold.woff2') format('woff2'),
+       url('/path-to/ProximaNova-Bold.woff') format('woff'),
+       url('/path-to/ProximaNova-Bold.ttf')  format('truetype');
+}
+
+body {
+  font-family: 'ProximaNova-Bold', sans-serif;
+}

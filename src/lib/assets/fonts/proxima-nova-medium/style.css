@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'proxima-nova-medium';
+  src: url('/path-to/proxima-nova-medium.woff2') format('woff2'),
+       url('/path-to/proxima-nova-medium.woff') format('woff'),
+       url('/path-to/proxima-nova-medium.ttf')  format('truetype');
+}
+
+body {
+  font-family: 'proxima-nova-medium', sans-serif;
+}

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url('/path-to/ProximaNova-Regular.woff2') format('woff2'),
+       url('/path-to/ProximaNova-Regular.woff') format('woff'),
+       url('/path-to/ProximaNova-Regular.ttf')  format('truetype');
+}
+
+body {
+  font-family: 'ProximaNova-Regular', sans-serif;
+}
