@@ -621,7 +621,10 @@
 							<a
 								href={item.link}
 								class="menu1"
-								on:click={() => (activeMenu = item.text)((activeSubMenu = ''))}>{item.text}</a
+								on:click={() =>
+									(activeMenu === item.text ? (activeMenu = '') : (activeMenu = item.text))(
+										(activeSubMenu = '')
+									)}>{item.text}</a
 							>
 							<div
 								class="subMenu menu-anime {activeMenu === item.text ? 'show-menu' : 'hide-menu'}"
@@ -632,8 +635,10 @@
 											<a
 												href={subItem.link}
 												class="menu"
-												on:click={() => (activeSubMenu = item.text + '-' + subItem.text)}
-												>{subItem.text}</a
+												on:click={() =>
+													activeSubMenu === item.text + '-' + subItem.text
+														? (activeSubMenu = '')
+														: (activeSubMenu = item.text + '-' + subItem.text)}>{subItem.text}</a
 											>
 											<div
 												class="sub menu-anime {activeSubMenu === item.text + '-' + subItem.text
