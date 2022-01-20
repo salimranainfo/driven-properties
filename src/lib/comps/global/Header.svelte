@@ -618,8 +618,10 @@
 				<ul class="clearfix">
 					{#each menu as item}
 						<li>
-							<a href={item.link} class="menu1" on:click={() => (activeMenu = item.text)}
-								>{item.text}</a
+							<a
+								href={item.link}
+								class="menu1"
+								on:click={() => (activeMenu = item.text)((activeSubMenu = ''))}>{item.text}</a
 							>
 							<div
 								class="subMenu menu-anime {activeMenu === item.text ? 'show-menu' : 'hide-menu'}"
