@@ -1,3 +1,7 @@
+<script>
+	let activeTab = 't1';
+</script>
+
 <div class="popular">
 	<div class="container">
 		<div class="popular-main">
@@ -12,22 +16,23 @@
 			<div class="tab">
 				<div class="tab_links">
 					<ul>
-						<li class="active">
-							<a href="#!" id="t1">BLUEWATERS ISLAND</a>
+						<li class={activeTab === 't1' ? 'active' : ''}>
+							<a href="#!" id="t1" on:click={() => (activeTab = 't1')}>BLUEWATERS ISLAND</a>
 						</li>
-						<li class="">
-							<a href="#!" id="t2">PORT DE LA MER</a>
+						<li class={activeTab === 't2' ? 'active' : ''}>
+							<a href="#!" id="t2" on:click={() => (activeTab = 't2')}>PORT DE LA MER</a>
 						</li>
-						<li class="">
-							<a href="#!" id="t3">CITY WALK</a>
+						<li class={activeTab === 't3' ? 'active' : ''}>
+							<a href="#!" id="t3" on:click={() => (activeTab = 't3')}>CITY WALK</a>
 						</li>
-						<li class="">
-							<a href="#!" id="t4">DOWNTOWN</a>
+						<li class={activeTab === 't4' ? 'active' : ''}>
+							<a href="#!" id="t4" on:click={() => (activeTab = 't4')}>DOWNTOWN</a>
 						</li>
 					</ul>
 				</div>
+
 				<div class="tab_cnt_wrapper">
-					<div class="bluewater t1" style="display: block">
+					<div class="bluewater t1 tab-anime {activeTab === 't1' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
 								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
@@ -42,7 +47,7 @@
 							<a href="#!">Learn More</a>
 						</div>
 					</div>
-					<div class="bluewater t2">
+					<div class="bluewater t2 tab-anime {activeTab === 't2' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
 								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
@@ -57,7 +62,7 @@
 							<a href="#!">Learn More</a>
 						</div>
 					</div>
-					<div class="bluewater t3">
+					<div class="bluewater t3 tab-anime {activeTab === 't3' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
 								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
@@ -72,7 +77,7 @@
 							<a href="#!">Learn More</a>
 						</div>
 					</div>
-					<div class="bluewater t4">
+					<div class="bluewater t4 tab-anime {activeTab === 't4' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
 								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
@@ -130,3 +135,26 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.show-tab {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.tab-anime {
+		transition: all 0.3s ease-in-out;
+		position: absolute;
+	}
+
+	.hide-tab {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.tab_cnt_wrapper {
+		overflow: hidden;
+		height: 675px;
+		position: relative;
+	}
+</style>

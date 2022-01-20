@@ -2,153 +2,589 @@
 	import { onMount } from 'svelte';
 	import { direction } from '$lib/store/index';
 
-	onMount(() => {
-		window.jQuery(document).on('click', 'nav ul li a', function () {
-			window.jQuery(this).closest('li').toggleClass('active');
-			window.jQuery(this).closest('li').siblings().removeClass('active');
-			window.jQuery(this).closest('li').find('.subMenu').slideToggle();
-			window.jQuery(this).closest('li').siblings().find('.subMenu').slideUp();
-		});
+	onMount(() => {});
 
-		if (window.jQuery(window).width() < 767) {
-			window.jQuery(document).on('click', 'nav ul li a', function () {
-				window.jQuery(this).closest('li').toggleClass('active');
-				window.jQuery(this).closest('li').siblings().removeClass('active');
-				window.jQuery(this).closest('li').find('.subMenu').slideToggle();
-				window.jQuery(this).closest('li').siblings().find('.subMenu').slideUp();
-			});
-		}
-
-		window.jQuery(document).on('click', '.subMenu ul li a', function () {
-			window.jQuery(this).closest('li').toggleClass('active');
-			window.jQuery(this).closest('li').siblings().removeClass('active');
-			window.jQuery(this).closest('li').find('.sub').slideToggle();
-			window.jQuery(this).closest('li').siblings().find('.sub').slideUp();
-		});
-
-		if (window.jQuery(window).width() < 767) {
-			window.jQuery(document).on('click', '.subMenu ul li a', function () {
-				window.jQuery(this).closest('li').toggleClass('active');
-				window.jQuery(this).closest('li').siblings().removeClass('active');
-				window.jQuery(this).closest('li').find('.sub').slideToggle();
-				window.jQuery(this).closest('li').siblings().find('.sub').slideUp();
-			});
-		}
-
-		window.jQuery(document).ready(function () {
-			window.jQuery('.tab_links ul li a').click(function (e) {
-				var tar = '.' + window.jQuery(this).attr('id');
-
-				window.jQuery(tar).fadeIn();
-				window.jQuery(tar).siblings().hide();
-
-				window.jQuery(this).parent().addClass('active');
-				window.jQuery(this).parent().siblings().removeClass('active');
-			});
-		});
-
-		window.jQuery(document).ready(function (e) {
-			window.jQuery('nav').clone().appendTo('.side_bar');
-			window.jQuery('.menu_icon').click(function () {
-				window.jQuery('body').toggleClass('open_menu');
-			});
-		});
-
-		window.jQuery(document).ready(function () {
-			window.jQuery('.office span').on('click', function () {
-				if (window.jQuery(this).hasClass('active')) {
-					window.jQuery(this).removeClass('active');
-					window.jQuery(this).siblings('.content').slideUp(200);
-					window.jQuery('.office span i').removeClass('fa-angle-up').addClass('fa-angle-down');
-				} else {
-					window.jQuery('.office span i').removeClass('fa-angle-up').addClass('fa-angle-down');
-					window.jQuery(this).find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
-					window.jQuery('.office span').removeClass('active');
-					window.jQuery(this).addClass('active');
-					window.jQuery('.content').slideUp(200);
-					window.jQuery(this).siblings('.content').slideDown(200);
+	const menu = [
+		{
+			text: 'DRIVEN FORBES',
+			link: '#!',
+			subMenu: [
+				{
+					text: 'Buy Ready Property',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Off Plan',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Plots',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Commercial',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Seller',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
 				}
-			});
-		});
+			]
+		},
+		{
+			text: 'SALES',
+			link: '#!',
+			subMenu: [
+				{
+					text: 'Buy Ready Property',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Off Plan',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Plots',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Commercial',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Seller',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				}
+			]
+		},
+		{
+			text: 'RENTALS',
+			link: '#!',
+			subMenu: [
+				{
+					text: 'Buy Ready Property',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Off Plan',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Plots',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Commercial',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Seller',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				}
+			]
+		},
+		{
+			text: 'EXPLORE',
+			link: '#!',
+			subMenu: [
+				{
+					text: 'Buy Ready Property',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Off Plan',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Plots',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Commercial',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Seller',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				}
+			]
+		},
+		{
+			text: 'MARKET TRENDS',
+			link: '#!',
+			subMenu: [
+				{
+					text: 'Buy Ready Property',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Off Plan',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Plots',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Commercial',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Seller',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				}
+			]
+		},
+		{
+			text: 'ABOUT US',
+			link: '#!',
+			subMenu: [
+				{
+					text: 'Buy Ready Property',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Off Plan',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Buy Plots',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Commercial',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				},
+				{
+					text: 'Seller',
+					link: '#!',
+					subMenu: [
+						{
+							text: 'Ready Apartments',
+							link: '#!'
+						},
+						{
+							text: 'Ready Villas',
+							link: '#!'
+						},
+						{
+							text: 'Ready Townhouses',
+							link: '#!'
+						}
+					]
+				}
+			]
+		}
+	];
 
-		window.jQuery(document).ready(function () {
-			window.jQuery('.dpx-header-search-box').click(function () {
-				window.jQuery('#id-search-area-floating').removeClass('dpx-hide').addClass('dpx-show');
-				window.jQuery('.dpx-header-search-box').addClass('dpx-hide').removeClass('dpx-show');
-				//window.jQuery('.dpx-dropdown').addClass('dpx-hide').removeClass('dpx-show');
-				//window.jQuery('.dpx-header-search-box').addClass('dpx-hide').removeClass('dpx-show');
-				//window.jQuery('.dpx-header-search-group').removeClass('dpx-hide').addClass('dpx-show');
-			});
-			window.jQuery('.dpx-tab-sale').click(function () {
-				window.jQuery('.dpx-tab-sale .dpx-search-unit-type').addClass('active');
-				window.jQuery('.dpx-tab-rent .dpx-search-unit-type').removeClass('active');
-				window.jQuery('.dpx-rent-price').addClass('dpx-hide').removeClass('dpx-show');
-				window.jQuery('.dpx-sale-price').removeClass('dpx-hide').addClass('dpx-show');
-				window.jQuery('#unit-price').val('');
-				window.jQuery('#hdby2').val('Sale');
-			});
-			window.jQuery('.dpx-tab-rent').click(function () {
-				window.jQuery('.dpx-tab-rent .dpx-search-unit-type').addClass('active');
-				window.jQuery('.dpx-tab-sale .dpx-search-unit-type').removeClass('active');
-				window.jQuery('.dpx-rent-price').removeClass('dpx-hide').addClass('dpx-show');
-				window.jQuery('.dpx-sale-price').addClass('dpx-hide').removeClass('dpx-show');
-				window.jQuery('#unit-price').val('');
-				window.jQuery('#hdby2').val('Rent');
-			});
-			window.jQuery('#id-search-area-close').click(function () {
-				window.jQuery('#id-search-area-floating').removeClass('dpx-show').addClass('dpx-hide');
-				window.jQuery('.dpx-header-search-box').addClass('dpx-show').removeClass('dpx-hide');
-			});
-			window.jQuery('.dpx-search-close').click(function () {
-				window.jQuery('.dpx-dropdown').addClass('dpx-show').removeClass('dpx-hide');
-				window.jQuery('.dpx-header-search-box').addClass('dpx-show').removeClass('dpx-hide');
-				window.jQuery('.dpx-header-search-group').removeClass('dpx-show').addClass('dpx-hide');
-			});
-			window.jQuery('#id-search-bar').click(function () {
-				window.jQuery(this).addClass('dpx-search-box-expand');
-			});
-			window.jQuery('#id-search-bar').blur(function () {
-				window.jQuery(this).removeClass('dpx-search-box-expand');
-			});
-		});
-		window.jQuery(document).ready(function () {
-			window.jQuery('#id-menu-open-x').click(function () {
-				window.jQuery('#id-menu-open-x').addClass('dpx-hide').removeClass('dpx-show');
-				window.jQuery('#id-menu-close-x').addClass('dpx-show').removeClass('dpx-hide');
-				window.jQuery('#id-mobile-menu-x').addClass('dpx-show').removeClass('dpx-hide');
-			});
-			window.jQuery('#id-menu-close-x').click(function () {
-				window.jQuery('#id-menu-close-x').addClass('dpx-hide').removeClass('dpx-show');
-				window.jQuery('#id-menu-open-x').addClass('dpx-show').removeClass('dpx-hide');
-				window.jQuery('#id-mobile-menu-x').addClass('dpx-hide').removeClass('dpx-show');
-			});
-			window.jQuery('.dpx-home-dubai-area-tab').click(function () {
-				var d_id = window.jQuery(this).data('areatab');
-				window.jQuery('.dpx-home-dubai-area-tab').removeClass('active');
-				window.jQuery(this).addClass('active');
-				var setActive = '#id-home-dubai-area-panel-' + d_id;
-				window.jQuery('.dpx-home-dubai-area-inside').removeClass('dpx-show').addClass('dpx-hide');
-				window.jQuery(setActive).addClass('dpx-show').removeClass('dpx-hide');
-			});
-		});
-
-		window.jQuery(document).ready(function () {
-			window.jQuery('.dpx-header-search-box').click(function (e) {
-				window.jQuery('#id-search-area-floating').toggleClass('active');
-				window.jQuery('#id-search-area-floating').removeClass('active');
-			});
-		});
-
-		window.jQuery(document).ready(function (e) {
-			window.jQuery('.dpx-header-search-box').click(function () {
-				window.jQuery('.dpx-header-search-box').toggleClass('active');
-				window.jQuery('#id-search-area-floating').slideToggle();
-			});
-			window.jQuery('.dpx-search-area-close i').click(function () {
-				window.jQuery('#id-search-area-floating').slideUp('.close');
-			});
-		});
-	});
+	let activeMenu = '';
+	let activeSubMenu = '';
 
 	const onChangeLang = (dir) => {
 		$direction = dir;
@@ -180,528 +616,42 @@
 
 			<nav class={`${$direction === 'rtl' && 'demo'}`}>
 				<ul class="clearfix">
-					<li>
-						<a href="#!" class="menu1">DRIVEN FORBES</a>
-						<div class="subMenu">
-							<ul class="clearfix">
-								<li>
-									<a href="#!" class="menu">Buy Ready Property</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Off Plan</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Plots</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Commercial</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Seller</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="#!" class="menu1">SALES</a>
-						<div class="subMenu">
-							<ul class="clearfix">
-								<li>
-									<a href="#!" class="menu">Buy Ready Property</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Off Plan</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Plots</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Commercial</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Seller</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="#!" class="menu1">RENTALS</a>
-						<div class="subMenu">
-							<ul class="clearfix">
-								<li>
-									<a href="#!" class="menu">Buy Ready Property</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Off Plan</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Plots</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Commercial</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Seller</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="#!" class="menu1">EXPLORE</a>
-						<div class="subMenu">
-							<ul class="clearfix">
-								<li>
-									<a href="#!" class="menu">Buy Ready Property</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Off Plan</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Plots</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Commercial</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Seller</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="#!" class="menu1">MARKET TRENDS</a>
-						<div class="subMenu">
-							<ul class="clearfix">
-								<li>
-									<a href="#!" class="menu">Buy Ready Property</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Off Plan</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Plots</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Commercial</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Seller</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="#!" class="menu1">ABOUT US</a>
-						<div class="subMenu">
-							<ul class="clearfix">
-								<li>
-									<a href="#!" class="menu">Buy Ready Property</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Off Plan</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Buy Plots</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Commercial</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#!" class="menu">Seller</a>
-									<div class="sub">
-										<ul class="clearfix">
-											<li>
-												<a href="#!">Ready Apartments</a>
-											</li>
-											<li>
-												<a href="#!">Ready Villas</a>
-											</li>
-											<li>
-												<a href="#!">Ready Townhouses</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</li>
+					{#each menu as item}
+						<li>
+							<a href={item.link} class="menu1" on:click={() => (activeMenu = item.text)}
+								>{item.text}</a
+							>
+							<div
+								class="subMenu menu-anime {activeMenu === item.text ? 'show-menu' : 'hide-menu'}"
+							>
+								<ul class="clearfix">
+									{#each item.subMenu as subItem}
+										<li>
+											<a
+												href={subItem.link}
+												class="menu"
+												on:click={() => (activeSubMenu = item.text + '-' + subItem.text)}
+												>{subItem.text}</a
+											>
+											<div
+												class="sub menu-anime {activeSubMenu === item.text + '-' + subItem.text
+													? 'show-menu'
+													: 'hide-menu'}"
+											>
+												<ul class="clearfix">
+													{#each subItem.subMenu as subSubItem}
+														<li>
+															<a href={subSubItem.link}>{subSubItem.text}</a>
+														</li>
+													{/each}
+												</ul>
+											</div>
+										</li>
+									{/each}
+								</ul>
+							</div>
+						</li>
+					{/each}
 				</ul>
 			</nav>
 
@@ -1404,3 +1354,23 @@
 		</div>
 	</div>
 </header>
+
+<style>
+	.show-menu {
+		/* opacity: 1; */
+		/* max-height: 500px; */
+		visibility: visible;
+		/* overflow: auto; */
+	}
+
+	.menu-anime {
+		transition: all 0.5s ease-in-out;
+	}
+
+	.hide-menu {
+		/* overflow-y: hidden; */
+		opacity: 0;
+		/* max-height: 0; */
+		visibility: hidden;
+	}
+</style>

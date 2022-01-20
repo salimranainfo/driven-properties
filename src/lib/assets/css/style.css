@@ -281,7 +281,7 @@ nav ul li {
 	top: 100%;
 	left: 0;
 	width: 250px;
-	display: none;
+	/* display: none; */
 	z-index: 999;
 }
 .subMenu ul > li {
@@ -315,7 +315,7 @@ nav .subMenu ul li.active > a {
 	top: 0;
 	left: 100%;
 	width: 100%;
-	display: none;
+	/* display: none; */
 }
 .subMenu > ul > li > a {
 	display: block;
@@ -919,9 +919,9 @@ footer {
 	display: inline-block;
 	border-bottom: 1px solid #314873;
 }
-.bluewater {
+/* .bluewater {
 	display: none;
-}
+} */
 
 .side_bar {
 	display: none;
