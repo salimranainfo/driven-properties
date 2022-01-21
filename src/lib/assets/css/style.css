@@ -1290,7 +1290,7 @@ nav ul li:last-child .subMenu ul li .sub {
 	text-align: right;
 }
 #id-search-area-floating {
-	display: none;
+	/* display: none; */
 }
 #id-search-area-floating.active {
 	display: block;

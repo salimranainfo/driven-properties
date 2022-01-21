@@ -585,6 +585,8 @@
 
 	let activeMenu = '';
 	let activeSubMenu = '';
+	let showSearchBox = false;
+	let activeSearchTab = 'sale';
 
 	const onChangeLang = (dir) => {
 		$direction = dir;
@@ -609,7 +611,10 @@
 	<div class={`header-rgt ${$direction === 'rtl' && 'demo'}`}>
 		<div class="header-in">
 			<div class="search">
-				<span class={`dpx-header-search-box dpx-show ${$direction === 'rtl' && 'arch'}`}>
+				<span
+					class={`dpx-header-search-box dpx-show ${$direction === 'rtl' && 'arch'}`}
+					on:click={() => (showSearchBox = !showSearchBox)}
+				>
 					<img src="images/search-zoom-2.png" id="idHeaderZoom" alt="Search" title="Search" />
 				</span>
 			</div>
@@ -617,29 +622,21 @@
 			<nav class={`${$direction === 'rtl' && 'demo'}`}>
 				<ul class="clearfix">
 					{#each menu as item}
-						<li>
-							<a
-								href={item.link}
-								class="menu1"
-								on:click={() =>
-									(activeMenu === item.text ? (activeMenu = '') : (activeMenu = item.text))(
-										(activeSubMenu = '')
-									)}>{item.text}</a
-							>
+						<li
+							on:mouseenter={() => (activeMenu = item.text)}
+							on:mouseleave={() => (activeMenu = '')((activeSubMenu = ''))}
+						>
+							<a href={item.link} class="menu1">{item.text}</a>
 							<div
 								class="subMenu menu-anime {activeMenu === item.text ? 'show-menu' : 'hide-menu'}"
 							>
 								<ul class="clearfix">
 									{#each item.subMenu as subItem}
-										<li>
-											<a
-												href={subItem.link}
-												class="menu"
-												on:click={() =>
-													activeSubMenu === item.text + '-' + subItem.text
-														? (activeSubMenu = '')
-														: (activeSubMenu = item.text + '-' + subItem.text)}>{subItem.text}</a
-											>
+										<li
+											on:mouseenter={() => (activeSubMenu = item.text + '-' + subItem.text)}
+											on:mouseleave={() => (activeSubMenu = '')}
+										>
+											<a href={subItem.link} class="menu">{subItem.text}</a>
 											<div
 												class="sub menu-anime {activeSubMenu === item.text + '-' + subItem.text
 													? 'show-menu'
@@ -695,7 +692,10 @@
 	<div class="clear" />
 
 	<div class="dpx-search-area-floating-0">
-		<div id="id-search-area-floating" class="dpx-show">
+		<div
+			id="id-search-area-floating"
+			class="dpx-show search-anime {showSearchBox ? 'show-search' : 'hide-search'}"
+		>
 			<div class="row">
 				<div class="">
 					<div class="dpx-search-area-floating">
@@ -710,18 +710,30 @@
 								method="post"
 							>
 								<input type="hidden" id="hdby2" name="hdby" value="Sale" />
+
 								<div class="txt">
 									<div class="dpx-tab-sale">
-										<div class="dpx-search-unit-type active">
-											<a href="#!" title="Sale" class="dpx-query-box">For Sale</a>
+										<div class="dpx-search-unit-type " class:active={activeSearchTab === 'sale'}>
+											<a
+												href="#!"
+												title="Sale"
+												class="dpx-query-box"
+												on:click={() => (activeSearchTab = 'sale')}>For Sale</a
+											>
 										</div>
 									</div>
 									<div class="dpx-tab-rent">
-										<div class="dpx-search-unit-type">
-											<a href="#!" title="Rent" class="dpx-query-box">For Rent</a>
+										<div class="dpx-search-unit-type" class:active={activeSearchTab === 'rent'}>
+											<a
+												href="#!"
+												title="Rent"
+												class="dpx-query-box"
+												on:click={() => (activeSearchTab = 'rent')}>For Rent</a
+											>
 										</div>
 									</div>
 								</div>
+
 								<div class="row">
 									<div class="search-txt">
 										<input
@@ -734,6 +746,7 @@
 										/>
 										<div id="suggesstion-box-22" />
 									</div>
+
 									<ul class="clearfix text-types">
 										<li>
 											<div class="type">
@@ -1364,10 +1377,7 @@
 
 <style>
 	.show-menu {
-		/* opacity: 1; */
-		/* max-height: 500px; */
 		visibility: visible;
-		/* overflow: auto; */
 	}
 
 	.menu-anime {
@@ -1375,9 +1385,23 @@
 	}
 
 	.hide-menu {
-		/* overflow-y: hidden; */
 		opacity: 0;
-		/* max-height: 0; */
+		visibility: hidden;
+	}
+
+	.show-search {
+		visibility: visible;
+		max-height: 500px;
+	}
+
+	.search-anime {
+		transition: all 0.5s ease-in-out;
+		overflow: hidden;
+	}
+
+	.hide-search {
+		/* opacity: 0; */
+		max-height: 0;
 		visibility: hidden;
 	}
 </style>
