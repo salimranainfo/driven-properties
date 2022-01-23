@@ -15,7 +15,7 @@
 										Building 13 <br />
 										Business Bay,Dubai</a
 									>
-									<a href="Tel:+971(0) 4 429 7040">Tel: +971(0) 4 429 7040</a>
+									<a href="tel:+971(0)44297040">Tel: +971(0) 4 429 7040</a>
 								</div>
 							</div>
 						</div>
@@ -34,7 +34,7 @@
 										District 15, JVC <br />
 										Dubai,UAE</a
 									>
-									<a href="TEL:+971(0) 4 578 6295">Tel: +971(0) 4 578 6295</a>
+									<a href="tel:+971(0)45786295">Tel: +971(0) 4 578 6295</a>
 								</div>
 							</div>
 						</div>
@@ -42,7 +42,7 @@
 					<li>
 						<div class="office">
 							<div class="office-in">
-								<h6 class="hide" />
+								<span class="hide" />
 								<span>Dubai Creek Harbour <i class="fa fa-angle-down" aria-hidden="true" /></span>
 								<div class="content">
 									<a href="#!"
@@ -51,7 +51,7 @@
 										South Podium <br />
 										Dubai Creek Harbour, UAE</a
 									>
-									<a href="Tel:+971(0) 4 257 2772">Tel: +971(0) 4 257 2772</a>
+									<a href="tel:+971(0)42572772">Tel: +971(0) 4 257 2772</a>
 								</div>
 							</div>
 						</div>
@@ -59,7 +59,7 @@
 					<li>
 						<div class="office">
 							<div class="office-in">
-								<h6 class="hide" />
+								<span class="hide" />
 								<span>Dubai Hills Estate <i class="fa fa-angle-down" aria-hidden="true" /></span>
 								<div class="content">
 									<a href="#!"
@@ -67,7 +67,7 @@
 										Acacia 1 Tower C,<br />
 										Dubai Hills Estate
 									</a>
-									<a href="Tel:+971(0) 4 388 2201">Tel: +971(0) 4 388 2201</a>
+									<a href="tel:+971(0)43882201">Tel: +971(0) 4 388 2201</a>
 								</div>
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 					<li>
 						<div class="office">
 							<div class="office-in">
-								<h6 class="hide" />
+								<span class="hide" />
 								<span>Saudi Arabia <i class="fa fa-angle-down" aria-hidden="true" /></span>
 								<div class="content">
 									<a href="#!"

@@ -615,7 +615,7 @@
 					class={`dpx-header-search-box dpx-show ${$direction === 'rtl' && 'arch'}`}
 					on:click={() => (showSearchBox = !showSearchBox)}
 				>
-					<img src="images/search-zoom-2.png" id="idHeaderZoom" alt="Search" title="Search" />
+					<img src="images/search-zoom-2.png" id="idHeaderZoomOne" alt="Search" title="Search" />
 				</span>
 			</div>
 
@@ -627,9 +627,7 @@
 							on:mouseleave={() => (activeMenu = '')((activeSubMenu = ''))}
 						>
 							<a href={item.link} class="menu1">{item.text}</a>
-							<div
-								class="subMenu menu-anime {activeMenu === item.text ? 'show-menu' : 'hide-menu'}"
-							>
+							<div class="subMenu  {activeMenu === item.text ? 'show-menu' : 'hide-menu'}">
 								<ul class="clearfix">
 									{#each item.subMenu as subItem}
 										<li
@@ -638,7 +636,7 @@
 										>
 											<a href={subItem.link} class="menu">{subItem.text}</a>
 											<div
-												class="sub menu-anime {activeSubMenu === item.text + '-' + subItem.text
+												class="sub {activeSubMenu === item.text + '-' + subItem.text
 													? 'show-menu'
 													: 'hide-menu'}"
 											>
@@ -671,7 +669,7 @@
 		<div class="menu-icons">
 			<div class="search1 mole">
 				<span class="dpx-header-search-box dpx-show">
-					<img src="images/search-zoom-2.png" id="idHeaderZoom" alt="Search" title="Search" />
+					<img src="images/search-zoom-2.png" id="idHeaderZoomTwo" alt="Search" title="Search" />
 				</span>
 			</div>
 			<div class={`icons mole ${$direction === 'rtl' && 'demo'}`}>
@@ -700,7 +698,7 @@
 				<div class="">
 					<div class="dpx-search-area-floating">
 						<div class="dpx-search-area-close">
-							<i class="fa fa-times" aria-hidden="true" />
+							<i class="fa fa-times" aria-hidden="true" on:click={() => (showSearchBox = false)} />
 						</div>
 						<div class="dpx-search-area-tabs">
 							<form
@@ -796,7 +794,7 @@
 										</li>
 										<li>
 											<div class="type">
-												<select name="price" id="unit-price" class="dpx-query-select">
+												<select name="price" id="unit-price-one" class="dpx-query-select">
 													<option value="">Price</option>
 													<option class="dpx-rent-price dpx-hide" value="30000"
 														>30,000 AED/Year</option
@@ -978,7 +976,7 @@
 											<ul class="clearfix size">
 												<li>
 													<div class="type1">
-														<select name="price" id="unit-price" class="dpx-query-select">
+														<select name="price" id="unit-price-two" class="dpx-query-select">
 															<option value="">Min Size</option>
 															<option class="dpx-rent-price dpx-hide" value="30000"
 																>30,000 AED/Year</option
@@ -1165,7 +1163,7 @@
 												</li>
 												<li>
 													<div class="type2">
-														<select name="price" id="unit-price" class="dpx-query-select">
+														<select name="price" id="unit-price-three" class="dpx-query-select">
 															<option value="">Max Size</option>
 															<option class="dpx-rent-price dpx-hide" value="30000"
 																>30,000 AED/Year</option

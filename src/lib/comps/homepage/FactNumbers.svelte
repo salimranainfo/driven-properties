@@ -47,10 +47,10 @@
 
 			<div class="award">
 				<div class="award-in">
-					<ul class="clearfix slider1">
+					<div class="clearfix slider1">
 						<Splide {options}>
 							<SplideSlide>
-								<li style="width: 100%">
+								<div style="width: 100%">
 									<div class="sale">
 										<div class="sale-in">
 											<a href="#!"
@@ -60,11 +60,11 @@
 											<p>AWARDS</p>
 										</div>
 									</div>
-								</li>
+								</div>
 							</SplideSlide>
 
 							<SplideSlide>
-								<li style="width: 100%">
+								<div style="width: 100%">
 									<div class="sale">
 										<div class="sale-in">
 											<a href="#!"
@@ -74,11 +74,11 @@
 											<p>GOOGLE REVIEWS</p>
 										</div>
 									</div>
-								</li>
+								</div>
 							</SplideSlide>
 
 							<SplideSlide>
-								<li style="width: 100%">
+								<div style="width: 100%">
 									<div class="sale">
 										<div class="sale-in">
 											<a href="#!"
@@ -88,11 +88,11 @@
 											<p>SALES VALUE</p>
 										</div>
 									</div>
-								</li>
+								</div>
 							</SplideSlide>
 
 							<SplideSlide>
-								<li style="width: 100%">
+								<div style="width: 100%">
 									<div class="sale">
 										<div class="sale-in">
 											<a href="#!"
@@ -107,10 +107,10 @@
 											<p>LEASING INCOME</p>
 										</div>
 									</div>
-								</li>
+								</div>
 							</SplideSlide>
 						</Splide>
-					</ul>
+					</div>
 				</div>
 			</div>
 

@@ -39,42 +39,42 @@
 			</p>
 			<div class="property">
 				<div class="property-in">
-					<ul class="clearfix slider">
+					<div class="clearfix slider">
 						<Splide {options}>
 							<SplideSlide>
-								<li style="width: 100%">
+								<div style="width: 100%">
 									<div class="manage">
 										<div class="manage-in">
 											<img src="images/img1.png" width="523" height="321" alt="img1" />
 											<h6>Property Management</h6>
 										</div>
 									</div>
-								</li>
+								</div>
 							</SplideSlide>
 
 							<SplideSlide>
-								<li style="width: 100%">
+								<div style="width: 100%">
 									<div class="manage">
 										<div class="manage-in">
 											<img src="images/img2.png" width="523" height="321" alt="img2" />
 											<h6>Property Investment</h6>
 										</div>
 									</div>
-								</li>
+								</div>
 							</SplideSlide>
 
 							<SplideSlide>
-								<li style="width: 100%">
+								<div style="width: 100%">
 									<div class="manage">
 										<div class="manage-in">
 											<img src="images/img3.png" width="523" height="321" alt="img3" />
 											<h6>Mortgage Advisor</h6>
 										</div>
 									</div>
-								</li>
+								</div>
 							</SplideSlide>
 						</Splide>
-					</ul>
+					</div>
 				</div>
 			</div>
 
