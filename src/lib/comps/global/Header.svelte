@@ -585,11 +585,23 @@
 
 	let activeMenu = '';
 	let activeSubMenu = '';
+	let activeSubSubMenu = '';
 	let showSearchBox = false;
 	let activeSearchTab = 'sale';
 
 	const onChangeLang = (dir) => {
 		$direction = dir;
+	};
+
+	const onSubMenuLeave = (item, subItem) => {
+		if (!activeSubSubMenu.includes(item.text + '-' + subItem.text)) {
+			activeSubMenu = '';
+		}
+	};
+
+	const onSelectSubSubMenu = (item, subItem, subSubItem) => {
+		activeSubSubMenu = item.text + '-' + subItem.text + '-' + subSubItem.text;
+		activeSubMenu = item.text + '-' + subItem.text;
 	};
 </script>
 
@@ -624,7 +636,7 @@
 					{#each menu as item}
 						<li
 							on:mouseenter={() => (activeMenu = item.text)}
-							on:mouseleave={() => (activeMenu = '')((activeSubMenu = ''))}
+							on:mouseleave={() => (activeMenu = '')}
 						>
 							<a href={item.link} class="menu1">{item.text}</a>
 							<div class="subMenu  {activeMenu === item.text ? 'show-menu' : 'hide-menu'}">
@@ -632,9 +644,13 @@
 									{#each item.subMenu as subItem}
 										<li
 											on:mouseenter={() => (activeSubMenu = item.text + '-' + subItem.text)}
-											on:mouseleave={() => (activeSubMenu = '')}
+											on:mouseleave={() => onSubMenuLeave(item, subItem)}
 										>
-											<a href={subItem.link} class="menu">{subItem.text}</a>
+											<a
+												href={subItem.link}
+												class="menu {activeSubSubMenu.includes(item.text + '-' + subItem.text) &&
+													'active'}">{subItem.text}</a
+											>
 											<div
 												class="sub {activeSubMenu === item.text + '-' + subItem.text
 													? 'show-menu'
@@ -643,7 +659,14 @@
 												<ul class="clearfix">
 													{#each subItem.subMenu as subSubItem}
 														<li>
-															<a href={subSubItem.link}>{subSubItem.text}</a>
+															<a
+																href={subSubItem.link}
+																class={activeSubSubMenu ===
+																	item.text + '-' + subItem.text + '-' + subSubItem.text &&
+																	'active'}
+																on:click={() => onSelectSubSubMenu(item, subItem, subSubItem)}
+																>{subSubItem.text}</a
+															>
 														</li>
 													{/each}
 												</ul>
@@ -1401,5 +1424,10 @@
 		/* opacity: 0; */
 		max-height: 0;
 		visibility: hidden;
+	}
+
+	.active {
+		background: #222222;
+		color: #ffffff;
 	}
 </style>
