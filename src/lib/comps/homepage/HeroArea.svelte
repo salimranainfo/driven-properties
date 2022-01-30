@@ -15,7 +15,7 @@
 					<div class="resorts">
 						<figure>
 							<img
-								src="images/Rectangle%20204.png"
+								src="/images/Rectangle%20204.png"
 								alt="Rectangle%20204"
 								height="1079"
 								width="100%"
@@ -40,7 +40,7 @@
 					<div class="resorts">
 						<figure>
 							<img
-								src="images/Rectangle%20204.png"
+								src="/images/Rectangle%20204.png"
 								alt="Rectangle%20204"
 								height="1079"
 								width="100%"
@@ -65,7 +65,7 @@
 					<div class="resorts">
 						<figure>
 							<img
-								src="images/Rectangle%20204.png"
+								src="/images/Rectangle%20204.png"
 								alt="Rectangle%20204"
 								height="1079"
 								width="100%"
@@ -90,7 +90,7 @@
 					<div class="resorts">
 						<figure>
 							<img
-								src="images/Rectangle%20204.png"
+								src="/images/Rectangle%20204.png"
 								alt="Rectangle%20204"
 								height="1079"
 								width="100%"

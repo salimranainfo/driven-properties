@@ -54,7 +54,7 @@
 									<div class="sale">
 										<div class="sale-in">
 											<a href="#!"
-												><img src="images/award.png" width="49" height="100" alt="award" /></a
+												><img src="/images/award.png" width="49" height="100" alt="award" /></a
 											>
 											<span>50+</span>
 											<p>AWARDS</p>
@@ -68,7 +68,7 @@
 									<div class="sale">
 										<div class="sale-in">
 											<a href="#!"
-												><img src="images/star-G.png" width="152" height="102" alt="star-G" /></a
+												><img src="/images/star-G.png" width="152" height="102" alt="star-G" /></a
 											>
 											<span>800+</span>
 											<p>GOOGLE REVIEWS</p>
@@ -82,7 +82,7 @@
 									<div class="sale">
 										<div class="sale-in">
 											<a href="#!"
-												><img src="images/f-img3.png" width="111" height="92" alt="f-img3" /></a
+												><img src="/images/f-img3.png" width="111" height="92" alt="f-img3" /></a
 											>
 											<span>AED 20Billion</span>
 											<p>SALES VALUE</p>
@@ -97,7 +97,7 @@
 										<div class="sale-in">
 											<a href="#!"
 												><img
-													src="images/house%20(1).png"
+													src="/images/house%20(1).png"
 													width="106"
 													height="93"
 													alt="house%20(1)"

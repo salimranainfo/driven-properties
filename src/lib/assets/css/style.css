@@ -424,7 +424,7 @@ nav .subMenu ul li.active > a {
 	position: relative;
 }
 .act:after {
-	background: url(../images/sales1/buy-property-icon.png) no-repeat;
+	background: url(/images/sales1/buy-property-icon.png) no-repeat;
 	width: 33px;
 	height: 38px;
 	position: absolute;
@@ -438,7 +438,7 @@ nav .subMenu ul li.active > a {
 	position: relative;
 }
 .act1:after {
-	background: url(../images/sales2/property-devs-icon.png) no-repeat;
+	background: url(/images/sales2/property-devs-icon.png) no-repeat;
 	width: 33px;
 	height: 38px;
 	position: absolute;
@@ -452,7 +452,7 @@ nav .subMenu ul li.active > a {
 	position: relative;
 }
 .act2:after {
-	background: url(../images/sales3/rent-property-icon.png) no-repeat;
+	background: url(/images/sales3/rent-property-icon.png) no-repeat;
 	width: 33px;
 	height: 38px;
 	position: absolute;
@@ -466,7 +466,7 @@ nav .subMenu ul li.active > a {
 	position: relative;
 }
 .act3:after {
-	background: url(../images/sales4/marketing-stats-icon.png) no-repeat;
+	background: url(/images/sales4/marketing-stats-icon.png) no-repeat;
 	width: 33px;
 	height: 38px;
 	position: absolute;
@@ -1220,7 +1220,7 @@ nav ul li:last-child .subMenu ul li .sub {
 	padding: 15px 10px;
 	margin-bottom: 10px;
 	margin-top: 10px;
-	background-image: url(../images/search-zoom-2.png);
+	background-image: url(/images/search-zoom-2.png);
 	background-repeat: no-repeat;
 	background-position: 99% 7px;
 	border: 1px solid #d6d6d6;
@@ -1235,7 +1235,7 @@ nav ul li:last-child .subMenu ul li .sub {
 	padding: 15px 10px;
 	margin-bottom: 0;
 	background: #222222;
-	background-image: url(../imgs/arrow.png);
+	background-image: url(/imgs/arrow.png);
 	background-position: 99% 50%;
 	background-repeat: no-repeat;
 	-webkit-appearance: none;
@@ -2015,7 +2015,7 @@ ul.btns li {
 	}
 	.dpx-search-area-floating .dpx-search-area-tabs .dpx-search-box {
 		background: #313131;
-		background-image: url(../images/search-zoom-2.png);
+		background-image: url(/images/search-zoom-2.png);
 		background-repeat: no-repeat;
 		background-position: 99% 7px;
 	}

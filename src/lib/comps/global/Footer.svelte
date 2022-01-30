@@ -141,7 +141,7 @@
 					<div class="footer-btm-rgt">
 						<div class="footer-btm-rgt-in">
 							<a href="#!"
-								><img src="images/f-btm-img.png" width="223" height="61" alt="f-btm-img" />
+								><img src="/images/f-btm-img.png" width="223" height="61" alt="f-btm-img" />
 							</a>
 						</div>
 					</div>

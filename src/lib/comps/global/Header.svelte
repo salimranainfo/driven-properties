@@ -603,7 +603,7 @@
 	{#if $direction === 'ltr'}
 		<div class="header-lft">
 			<a href="#!">
-				<img src="images/Group%20973.png" alt="Group%20973" width="155" height="40" />
+				<img src="/images/Group%20973.png" alt="Group%20973" width="155" height="40" />
 			</a>
 		</div>
 	{/if}
@@ -615,7 +615,7 @@
 					class={`dpx-header-search-box dpx-show ${$direction === 'rtl' && 'arch'}`}
 					on:click={() => (showSearchBox = !showSearchBox)}
 				>
-					<img src="images/search-zoom-2.png" id="idHeaderZoomOne" alt="Search" title="Search" />
+					<img src="/images/search-zoom-2.png" id="idHeaderZoomOne" alt="Search" title="Search" />
 				</span>
 			</div>
 
@@ -669,7 +669,7 @@
 		<div class="menu-icons">
 			<div class="search1 mole">
 				<span class="dpx-header-search-box dpx-show">
-					<img src="images/search-zoom-2.png" id="idHeaderZoomTwo" alt="Search" title="Search" />
+					<img src="/images/search-zoom-2.png" id="idHeaderZoomTwo" alt="Search" title="Search" />
 				</span>
 			</div>
 			<div class={`icons mole ${$direction === 'rtl' && 'demo'}`}>
@@ -682,7 +682,7 @@
 	{#if $direction === 'rtl'}
 		<div class="header-lft demo">
 			<a href="#!">
-				<img src="images/Group%20973.png" alt="Group%20973" width="155" height="40" />
+				<img src="/images/Group%20973.png" alt="Group%20973" width="155" height="40" />
 			</a>
 		</div>
 	{/if}

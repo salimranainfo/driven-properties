@@ -45,7 +45,7 @@
 								<div style="width: 100%">
 									<div class="manage">
 										<div class="manage-in">
-											<img src="images/img1.png" width="523" height="321" alt="img1" />
+											<img src="/images/img1.png" width="523" height="321" alt="img1" />
 											<h6>Property Management</h6>
 										</div>
 									</div>
@@ -56,7 +56,7 @@
 								<div style="width: 100%">
 									<div class="manage">
 										<div class="manage-in">
-											<img src="images/img2.png" width="523" height="321" alt="img2" />
+											<img src="/images/img2.png" width="523" height="321" alt="img2" />
 											<h6>Property Investment</h6>
 										</div>
 									</div>
@@ -67,7 +67,7 @@
 								<div style="width: 100%">
 									<div class="manage">
 										<div class="manage-in">
-											<img src="images/img3.png" width="523" height="321" alt="img3" />
+											<img src="/images/img3.png" width="523" height="321" alt="img3" />
 											<h6>Mortgage Advisor</h6>
 										</div>
 									</div>

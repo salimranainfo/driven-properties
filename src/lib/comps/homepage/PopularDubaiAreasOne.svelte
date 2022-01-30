@@ -35,7 +35,7 @@
 					<div class="bluewater t1 tab-anime {activeTab === 't1' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
-								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
+								src="/images/bluewaterbg/850x565_0013_Blue%20Waters.png"
 								alt="bluewaterbg"
 								width="1640"
 								height="629"
@@ -50,7 +50,7 @@
 					<div class="bluewater t2 tab-anime {activeTab === 't2' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
-								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
+								src="/images/bluewaterbg/850x565_0013_Blue%20Waters.png"
 								alt="bluewaterbg"
 								width="1640"
 								height="629"
@@ -65,7 +65,7 @@
 					<div class="bluewater t3 tab-anime {activeTab === 't3' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
-								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
+								src="/images/bluewaterbg/850x565_0013_Blue%20Waters.png"
 								alt="bluewaterbg"
 								width="1640"
 								height="629"
@@ -80,7 +80,7 @@
 					<div class="bluewater t4 tab-anime {activeTab === 't4' ? 'show-tab' : 'hide-tab'}">
 						<figure>
 							<img
-								src="images/bluewaterbg/850x565_0013_Blue%20Waters.png"
+								src="/images/bluewaterbg/850x565_0013_Blue%20Waters.png"
 								alt="bluewaterbg"
 								width="1640"
 								height="629"
@@ -96,7 +96,7 @@
 			</div>
 			<div class="bat">
 				<figure>
-					<img src="images/1.png" alt="1" width="372" height="234" />
+					<img src="/images/1.png" alt="1" width="372" height="234" />
 				</figure>
 				<div class="bat-in">
 					<h3>Bluewaters Island</h3>
@@ -105,7 +105,7 @@
 			</div>
 			<div class="bat">
 				<figure>
-					<img src="images/2.png" alt="2" width="372" height="234" />
+					<img src="/images/2.png" alt="2" width="372" height="234" />
 				</figure>
 				<div class="bat-in">
 					<h3>PORT DE LA MER</h3>
@@ -114,7 +114,7 @@
 			</div>
 			<div class="bat">
 				<figure>
-					<img src="images/3.png" alt="3" width="372" height="234" />
+					<img src="/images/3.png" alt="3" width="372" height="234" />
 				</figure>
 				<div class="bat-in">
 					<h3>CITY WALK</h3>
@@ -123,7 +123,7 @@
 			</div>
 			<div class="bat">
 				<figure>
-					<img src="images/4.png" alt="4" width="372" height="234" />
+					<img src="/images/4.png" alt="4" width="372" height="234" />
 				</figure>
 				<div class="bat-in">
 					<h3>DOWNTOWN</h3>
